@@ -39,8 +39,15 @@ jobs:
         run: npm ci
 
       - name: Write YouTube cookies (optional)
-        if: ${{ secrets.YT_COOKIES != '' }}
-        run: printf '%s' "${{ secrets.YT_COOKIES }}" > cookies.txt
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
+        run: |
+          if [ -n "$YT_COOKIES" ]; then
+            printf '%s' "$YT_COOKIES" > cookies.txt
+            echo "Wrote cookies.txt"
+          else
+            echo "No YT_COOKIES secret set; skipping."
+          fi
 
       - name: Run publisher
         env:

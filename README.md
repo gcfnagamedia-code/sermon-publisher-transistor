@@ -3,9 +3,17 @@
 Every week this turns the newest sermon in a YouTube playlist into a podcast episode on
 **Transistor** (which syndicates to Spotify), cutting the audio so it starts at the **scripture
 reading** and runs to the end. It finds the cut point from the video's transcript, double-checks it
-with a cheap LLM, and emails you a summary. The final mp3 is archived to Cloudflare R2.
+with a cheap LLM, and logs a summary of each run. The final mp3 is archived to Cloudflare R2.
 
 It runs on **GitHub Actions** (free for this volume) — no PC or server needed.
+
+## Documentation
+
+- **[docs/HOW-IT-WORKS.md](docs/HOW-IT-WORKS.md)** — plain-English explainer. **Start here if you're
+  new** or non-technical.
+- **[docs/OPERATIONS.md](docs/OPERATIONS.md)** — maintenance, things to watch out for, and a full
+  "inherit this from scratch" runbook.
+- The rest of this README is the credential/setup reference.
 
 ## How it works
 

@@ -71,6 +71,8 @@ export async function getNewestVideo(playlistId, opts = {}, deps = {}) {
         "--no-playlist",
         "--dump-json",
         "--no-warnings",
+        // Metadata only — don't fail if a candidate's formats aren't resolvable.
+        "--ignore-no-formats-error",
         ...cookieArgs(cookiesFile),
         `https://www.youtube.com/watch?v=${id}`,
       ],

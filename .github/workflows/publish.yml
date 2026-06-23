@@ -35,6 +35,13 @@ jobs:
           sudo chmod a+rx /usr/local/bin/yt-dlp
           yt-dlp --version
 
+      # yt-dlp uses Deno as its JavaScript runtime to solve YouTube's player
+      # challenge and resolve formats reliably from datacenter IPs.
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
       - name: Install dependencies
         run: npm ci
 

@@ -13,7 +13,7 @@ import { join } from "node:path";
 export function buildYtDlpArgs(videoUrl, outPath, { cookiesFile } = {}) {
   const args = [
     "-f",
-    "bestaudio",
+    "bestaudio/best",
     "--no-playlist",
     "--no-progress",
     "--no-warnings",

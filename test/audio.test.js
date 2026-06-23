@@ -4,7 +4,7 @@ import { buildYtDlpArgs, buildFfmpegArgs } from "../src/audio.js";
 
 test("buildYtDlpArgs: audio-only, no playlist, with output", () => {
   const args = buildYtDlpArgs("https://youtu.be/x", "/tmp/a.%(ext)s");
-  assert.deepEqual(args.slice(0, 3), ["-f", "bestaudio", "--no-playlist"]);
+  assert.deepEqual(args.slice(0, 3), ["-f", "bestaudio/best", "--no-playlist"]);
   assert.equal(args[args.indexOf("-o") + 1], "/tmp/a.%(ext)s");
   assert.equal(args[args.length - 1], "https://youtu.be/x");
 });

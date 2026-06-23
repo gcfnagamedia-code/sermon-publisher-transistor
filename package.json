@@ -1,0 +1,22 @@
+{
+  "name": "sermon-spotify-publisher",
+  "version": "1.0.0",
+  "description": "Weekly job that turns a YouTube sermon into a Transistor/Spotify podcast episode, cutting to the scripture reading via the transcript.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dry-run": "node src/index.js --dry-run",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.658.0",
+    "nodemailer": "^6.9.15",
+    "openai": "^4.67.0",
+    "youtube-transcript": "^1.2.1"
+  },
+  "license": "MIT"
+}
